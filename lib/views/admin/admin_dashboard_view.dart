@@ -1,3 +1,7 @@
+/**
+* Student Number:220019475, 224108179, 222016851, 223025046, 221030087, 221008989, 223058186
+* Student Name  :Lindokuhle Thabethe, Jordan Davids, Vinolia Malejane, Mofokeng Thato, Khabonina Tshabalala, Lerato Twala, A Mkhungela
+*/
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -51,21 +55,23 @@ class AdminViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-
-  Future<void> deleteApplication(String id) async {
-    try {
+  
+  Future<void> deleteApplication(String id) async{
+    try{
       await _supabase.from('applications').delete().eq('id', id);
       await loadApplications();
     } catch (e) {
       errorMessage = e.toString();
-      notifyListeners();
+      notifyListerners();
     }
   }
 
   void setFilter(String status) {
     filterStatus = status;
-    notifyListeners();
+    notifyListerners();
   }
+}
+
 }
 
 // ── View ───────────────────────────────────────────────────
@@ -85,11 +91,10 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
     _vm = AdminViewModel();
     Future.microtask(() => _vm.loadApplications());
   }
-
-  Color _statusColor(String status) {
-    switch (status) {
+  Color _statusColor(String status){
+    switch (status){
       case 'approved': return Colors.green;
-      case 'rejected': return Colors.red;
+      case 'rejected': return Colora.red;
       default: return Colors.orange;
     }
   }
@@ -128,7 +133,7 @@ class _AdminDashboardViewState extends State<AdminDashboardView> {
 
                   // Header card
                   Card(
-                    color: Colors.indigo,
+                    color: Colord.indigo,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
