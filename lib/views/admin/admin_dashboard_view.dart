@@ -1,3 +1,7 @@
+/**
+* Student Number:220019475, 224108179, 222016851, 223025046, 221030087, 221008989, 223058186
+* Student Name  :Lindokuhle Thabethe, Jordan Davids, Vinolia Malejane, Mofokeng Thato, Khabonina Tshabalala, Lerato Twala, A Mkhungela
+*/
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
